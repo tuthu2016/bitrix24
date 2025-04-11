@@ -1,9 +1,10 @@
 const { google } = require('googleapis');
 const axios = require('axios');
+const webhookBaseUrl = process.env.BITRIX_API_URL;
+const credentials = process.env.credentials;
+const sheetId = process.env.sheetId;
 
-const webhookBaseUrl = "https://giaohangnhanh.bitrix24.vn/rest/155/gdvotvpw8y3hd2ur/";
 const entityTypeId = 31; // SMART_INVOICE
-const sheetId = "";
 const batchSize = 50;
 const batchDelay = 2000;
 const maxRetries = 3;
@@ -12,7 +13,7 @@ const retryBaseDelay = 2000;
 // Khởi tạo Google Sheets API
 async function getSheetsClient() {
   const auth = new google.auth.GoogleAuth({
-    keyFile: './credentials.json',
+    keyFile: `$credentials`,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
   return google.sheets({ version: 'v4', auth });
