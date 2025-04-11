@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const webhookBaseUrl = "https://giaohangnhanh.bitrix24.vn/rest/155/gdvotvpw8y3hd2ur/";
 const entityTypeId = 31; // SMART_INVOICE
-const sheetId = "17mAKSl_W2MPLfnR2e-7WGLONQ6wDj1bLGMvHnMUk2Zc";
+const sheetId = "";
 const batchSize = 50;
 const batchDelay = 2000;
 const maxRetries = 3;
